@@ -4,7 +4,7 @@ import * as qs from "qs";
 
 import { session } from "./session";
 
-const config = require("../../config.json") as IAssistConfig;
+const config = require("../../config.json") as Assist.Config;
 
 const auth_url = github.auth.config({
   id: config.github.id,
@@ -19,7 +19,7 @@ auth.get("/auth/login", (req, res) => {
 });
 
 auth.get("/auth/redirect", (req, res) => {
-  const session = req.session as IAssistSession;
+  const session = req.session as Assist.Session;
   const values = qs.parse(req.query) as Github.OAuthResponse;
   github.auth.login(values.code, (err, token) => {
       session.github_token = token;

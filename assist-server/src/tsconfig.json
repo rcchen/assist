@@ -20,7 +20,6 @@
   "files": [
     "./core/auth.ts",
     "./core/index.ts",
-    "./core/interfaces.ts",
     "./core/session.ts",
     "./index.ts",
     "../typings/main.d.ts"

@@ -10,7 +10,7 @@ app.use(auth);
 app.use(session);
 
 app.get("/", (req, res) => {
-  const session = req.session as IAssistSession;
+  const session = req.session as Assist.Session;
   const client = github.client(session.github_token);
   client.me().info((err, user) => {
     res.json({
