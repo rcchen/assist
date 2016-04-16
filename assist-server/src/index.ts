@@ -14,6 +14,7 @@ app.get("/", (req, res) => {
   const client = github.client(session.github_token);
   client.me().info((err, user) => {
     res.json({
+      err,
       user,
       session
     });

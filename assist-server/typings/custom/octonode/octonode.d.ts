@@ -1,4 +1,9 @@
 declare namespace Github {
+  interface Error {
+    message: string;
+    statusCode: number;
+  }
+
   interface OAuthResponse {
     code: string,
     query: string
@@ -28,7 +33,7 @@ declare namespace Octonode {
   }
 
   class Auth {
-    public login(scopes: string[], cb?: (err: string, id: string, token: string) => void): string;
+    public login(scopes: string[], cb?: (err: Github.Error, id: string, token: string) => void): string;
   }
 
   class Client {
@@ -42,18 +47,18 @@ declare namespace Octonode {
   }
 
   class Me {
-    public info(cb: (err: any, data: Github.User, headers?: any) => void): void;
+    public info(cb: (err: Github.Error, data: Github.User, headers?: any) => void): void;
   }
 
   class User {
-    public info(cb: (err: any, data: Github.User, headers?: any) => void): void;
+    public info(cb: (err: Github.Error, data: Github.User, headers?: any) => void): void;
   }
 
   function client(token?: string): Client;
 
   namespace auth {
     function config(config: AppAuthConfig | UserAuthConfig): Auth;
-    function login(code: string, cb: (err: string, token: string) => void): void;
+    function login(code: string, cb: (err: Github.Error, token: string) => void): void;
   }
 }
 
