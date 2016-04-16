@@ -2,5 +2,10 @@
   "github": {
     "id": "GITHUB_ID",
     "secret": "GITHUB_SECRET"
+  },
+  "server": {
+    "session": {
+      "secret": "SESSION_SECRET"
+    }
   }
 }

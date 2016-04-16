@@ -1,4 +1,9 @@
 declare namespace Github {
+  interface OAuthResponse {
+    code: string,
+    query: string
+  }
+
   interface User {
     avatar_url: string;
     id: number;
@@ -44,10 +49,11 @@ declare namespace Octonode {
     public info(cb: (err: any, data: Github.User, headers?: any) => void): void;
   }
 
-  function client(): Client;
+  function client(token?: string): Client;
 
   namespace auth {
     function config(config: AppAuthConfig | UserAuthConfig): Auth;
+    function login(code: string, cb: (err: string, token: string) => void): void;
   }
 }
 
