@@ -2,16 +2,21 @@ import * as express from "express";
 import * as github from "octonode";
 import * as qs from "qs";
 
-import { auth } from "./core";
+import { auth, session } from "./core";
 
 const app = express();
 
 app.use(auth);
+app.use(session);
 
-const client = github.client();
 app.get("/", (req, res) => {
-  client.user("rcchen").info((err, user) => {
-    res.json(user);
+  const session = req.session as IAssistSession;
+  const client = github.client(session.github_token);
+  client.me().info((err, user) => {
+    res.json({
+      user,
+      session
+    });
   });
 });
 
