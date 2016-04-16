@@ -37,6 +37,8 @@ declare namespace Octonode {
   }
 
   class Client {
+    public get(url: string, payload: Object, cb: (err: Github.Error, status: string, body: string, headers: string) => void): void;
+
     public me(): Me;
     public user(user: string): User;
     public repo(repo: string): any;

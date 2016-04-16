@@ -22,7 +22,21 @@ auth.get("/auth/redirect", (req, res) => {
   const session = req.session as Assist.Session;
   const values = qs.parse(req.query) as Github.OAuthResponse;
   github.auth.login(values.code, (err, token) => {
-      session.github_token = token;
-      res.json(token);
+    session.github_token = token;
+    res.redirect("/");
   });
 });
+
+/*
+ * Middleware function for determining whether the current session needs to request a token or not.
+ * TODO: Add code for hitting Github to check that the token is valid
+ */
+export function isAuthenticated(req: express.Request, res: express.Response, next: Function) {
+  const session = req.session as Assist.Session;
+  // token not in session
+  if (session.github_token === undefined) {
+    res.redirect("/auth/login");
+  } else {
+    next();
+  }
+}
