@@ -1,0 +1,6 @@
+{
+  "github": {
+    "id": "GITHUB_ID",
+    "secret": "GITHUB_SECRET"
+  }
+}
