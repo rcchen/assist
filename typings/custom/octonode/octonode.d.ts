@@ -5,8 +5,15 @@ declare namespace Github {
   }
 
   interface OAuthResponse {
-    code: string,
-    query: string
+    code: string;
+    query: string;
+  }
+
+  interface Repo {
+    id: number;
+    name: string;
+    full_name: string;
+    owner: User;
   }
 
   interface User {
@@ -37,7 +44,7 @@ declare namespace Octonode {
   }
 
   class Client {
-    public get(url: string, payload: Object, cb: (err: Github.Error, status: string, body: string, headers: string) => void): void;
+    public get(url: string, payload: Object, cb: (err: Github.Error, status: string, body?: any, headers?: string) => void): void;
 
     public me(): Me;
     public user(user: string): User;
@@ -50,6 +57,7 @@ declare namespace Octonode {
 
   class Me {
     public info(cb: (err: Github.Error, data: Github.User, headers?: any) => void): void;
+    public repos(cb: (err: Github.Error, data: Github.Repo[], headers?: any) => void): void;
   }
 
   class User {
@@ -57,6 +65,7 @@ declare namespace Octonode {
   }
 
   function client(token?: string): Client;
+  function client(config?: AppAuthConfig): Client;
 
   namespace auth {
     function config(config: AppAuthConfig | UserAuthConfig): Auth;

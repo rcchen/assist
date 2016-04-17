@@ -21,6 +21,7 @@
     "./core/api.ts",
     "./core/assets.ts",
     "./core/auth.ts",
+    "./core/config.ts",
     "./core/index.ts",
     "./core/session.ts",
     "./index.ts",
