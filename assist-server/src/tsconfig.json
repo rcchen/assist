@@ -15,7 +15,7 @@
   ],
   "filesGlob": [
     "./**/*.ts",
-    "../typings/main.d.ts"
+    "../../typings/main.d.ts"
   ],
   "files": [
     "./core/assets.ts",
@@ -23,6 +23,6 @@
     "./core/index.ts",
     "./core/session.ts",
     "./index.ts",
-    "../typings/main.d.ts"
+    "../../typings/main.d.ts"
   ]
 }

@@ -20,11 +20,11 @@
     },
     "compileOnSave": false,
     "files": [
-        "../typings/main.d.ts",
+        "../../typings/main.d.ts",
         "init.tsx"
     ],
     "filesGlob": [
-        "../typings/main.d.ts",
+        "../../typings/main.d.ts",
         "**/*.ts",
         "**/*.tsx",
         "!node_modules/**"
