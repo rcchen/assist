@@ -4,6 +4,7 @@
     "secret": "GITHUB_SECRET"
   },
   "server": {
+    "assets": "ASSETS_PATH",
     "session": {
       "secret": "SESSION_SECRET"
     }

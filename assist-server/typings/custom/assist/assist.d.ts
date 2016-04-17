@@ -7,6 +7,7 @@ declare namespace Assist {
       secret: string;
     },
     server: {
+      assets: string;
       session: {
         secret: string;
       }

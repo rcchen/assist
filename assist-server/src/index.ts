@@ -1,15 +1,17 @@
 import * as express from "express";
 import * as github from "octonode";
+import * as path from "path";
 import * as qs from "qs";
 
-import { auth, isAuthenticated, session } from "./core";
+import { assets, auth, isAuthenticated, session } from "./core";
 
 const app = express();
 
+app.use("/", assets);
 app.use(auth);
 app.use(session);
 
-app.get("/", isAuthenticated, (req, res) => {
+app.get("/authenticated", isAuthenticated, (req, res) => {
   const session = req.session as Assist.Session;
   const client = github.client(session.github_token);
   client.me().info((err, user) => {

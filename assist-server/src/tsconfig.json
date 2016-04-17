@@ -18,6 +18,7 @@
     "../typings/main.d.ts"
   ],
   "files": [
+    "./core/assets.ts",
     "./core/auth.ts",
     "./core/index.ts",
     "./core/session.ts",
