@@ -1,6 +1,6 @@
 /// <reference path="custom/assist/assist.d.ts" />
 /// <reference path="custom/octonode/octonode.d.ts" />
-/// <reference path="main/ambient/es6-promise/index.d.ts" />
+/// <reference path="main/ambient/es6-shim/index.d.ts" />
 /// <reference path="main/ambient/express-serve-static-core/index.d.ts" />
 /// <reference path="main/ambient/express-session/index.d.ts" />
 /// <reference path="main/ambient/express/index.d.ts" />
