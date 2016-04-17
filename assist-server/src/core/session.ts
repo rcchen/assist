@@ -1,6 +1,6 @@
 import * as expressSession from "express-session";
 
-const config = require("../../config.json") as Assist.Config;
+import { config } from "./config";
 
 const MAX_COOKIE_AGE = 60000;
 

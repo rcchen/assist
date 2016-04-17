@@ -1,5 +1,5 @@
 import * as express from "express";
 
-const config = require("../../config.json") as Assist.Config;
+import { config } from "./config";
 
 export const assets = express.static(config.server.assets);

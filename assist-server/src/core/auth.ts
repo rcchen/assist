@@ -2,9 +2,8 @@ import * as express from "express";
 import * as github from "octonode";
 import * as qs from "qs";
 
+import { config } from "./config";
 import { session } from "./session";
-
-const config = require("../../config.json") as Assist.Config;
 
 const auth_url = github.auth.config({
   id: config.github.id,

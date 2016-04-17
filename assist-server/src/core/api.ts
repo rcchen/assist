@@ -9,7 +9,6 @@ api.use(session);
 
 // HACKHACK: Uses existence of error when hitting the User endpoint
 // Should be replaced with something else that doesn't incur an API hit ideally
-
 api.get("/authenticated", (req, res) => {
   const session = req.session as Assist.Session;
   github.client(session.github_token).me().info((err, user) => {
