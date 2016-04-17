@@ -28,15 +28,8 @@ gulp.task('default', function() {
     'clean',
     'copy',
     'build',
-    'serve',
     'watch'
   );
-});
-
-gulp.task('serve', function() {
-  plugins.connect.server({
-    root: 'build'
-  });
 });
 
 gulp.task('watch', function() {

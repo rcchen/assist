@@ -21,7 +21,11 @@
     "compileOnSave": false,
     "files": [
         "../../typings/main.d.ts",
-        "init.tsx"
+        "actions.ts",
+        "reducers.ts",
+        "views/index.ts",
+        "init.tsx",
+        "views/app.tsx"
     ],
     "filesGlob": [
         "../../typings/main.d.ts",
