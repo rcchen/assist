@@ -26,7 +26,7 @@ class AppComponent extends React.Component<IAppProps, {}> {
     const user = this.props.user
     if (Object.keys(user).length > 0) {
       userElement = (
-        <div className="at-sidebar-user at-hoverable">
+        <div className="at-sidebar-user">
           <div className="at-sidebar-user-image">
             <img src={user.avatar_url} />
           </div>
@@ -36,12 +36,25 @@ class AppComponent extends React.Component<IAppProps, {}> {
           </div>
         </div>
       );
+    } else {
+      userElement = (
+        <div className="at-sidebar-user">
+        <div className="at-sidebar-user-image">
+          <img src="https://placekitten.com/g/200/200" />
+        </div>
+        <div className="at-sidebar-user-info">
+          <div>Not signed in.</div>
+          <div>
+            <a href="/auth/login">Login</a>
+          </div>
+        </div>
+        </div>
+      )
     }
 
     return (
       <div className="at-sidebar">
-        <a href="/auth/login">Login</a>
-        <a href="" onClick={this.validate}>Validate</a>
+        <a className="at-sidebar-link" href="#">Modules</a>
         { userElement }
       </div>
     );
@@ -50,12 +63,6 @@ class AppComponent extends React.Component<IAppProps, {}> {
   public componentDidMount() {
     this.props.dispatch(isAuthenticated());
   }
-
-  private validate = (e: React.TouchEvent) => {
-    e.preventDefault();
-    this.props.dispatch(fetchUser());
-  };
-
 }
 
 export const App = connect(
