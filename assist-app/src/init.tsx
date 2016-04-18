@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import { applyMiddleware, createStore } from "redux";
 import thunkMiddleware from "redux-thunk";
 import { assistApp } from "./reducers";
-import { App } from "./views";
+import { AppRouter } from "./router";
 
 const store = createStore(
   assistApp,
@@ -19,6 +19,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
   document.body.appendChild(container);
   render(
     <Provider store={store}>
-      <App />
+      <AppRouter />
     </Provider>, container);
 });

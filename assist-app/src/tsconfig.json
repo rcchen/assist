@@ -27,7 +27,9 @@
         "reducers/index.ts",
         "views/index.ts",
         "init.tsx",
-        "views/app/app.tsx"
+        "router.tsx",
+        "views/app/app.tsx",
+        "views/repos/repos.tsx"
     ],
     "filesGlob": [
         "../../typings/main.d.ts",

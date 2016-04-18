@@ -1,6 +1,7 @@
 import * as React from "react";
 
 import { connect } from "react-redux";
+import { Link } from "react-router"
 import { Dispatch } from "redux";
 
 import { fetchUser, isAuthenticated } from "../../actions";
@@ -53,9 +54,14 @@ class AppComponent extends React.Component<IAppProps, {}> {
     }
 
     return (
-      <div className="at-sidebar">
-        <a className="at-sidebar-link" href="#">Modules</a>
-        { userElement }
+      <div className="at-app">
+        <div className="at-sidebar">
+          <Link to="/repos" className="at-sidebar-link">Repositories</Link>
+          { userElement }
+        </div>
+        <div className="at-body">
+          { this.props.children }
+        </div>
       </div>
     );
   }
