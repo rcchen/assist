@@ -13,15 +13,27 @@ export function receiveUser(user: Github.User) {
   }
 }
 
+export function isAuthenticated() {
+  return (dispatch: any) => {
+    return fetch("/api/authenticated", {
+        credentials: "same-origin"
+      })
+      .then(response => response.json())
+      .then(status => {
+        if (status) dispatch(fetchUser());
+      });
+  }
+}
+
 export function fetchUser() {
   return (dispatch: any) => {
     dispatch(requestUser())
     return fetch("/api/user", {
-        credentials: 'same-origin'
+        credentials: "same-origin"
       })
-      .then(response => response.text())
+      .then(response => response.json())
       .then(user => {
-        dispatch(receiveUser(JSON.parse(user)))
+        dispatch(receiveUser(user))
       });
   }
 }

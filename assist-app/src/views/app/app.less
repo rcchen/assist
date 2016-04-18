@@ -1,0 +1,53 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+html, body, #app {
+  height: 100%;
+}
+
+.at-sidebar {
+  background-color: #242424;
+  height: 100%;
+  width: 200px;
+
+  a {
+    color: #b4b4b4;
+    display: block;
+    font-weight: 300;
+    padding: 10px 20px;
+    text-decoration: none;
+
+    &:hover {
+      background-color: #020202;
+      color: #b4b4b4;
+    }
+  }
+
+  .at-sidebar-user {
+    bottom: 0;
+    padding: 10px;
+    position: absolute;
+    width: 200px;
+
+    &:hover {
+      background-color: #020202;
+    }
+
+    .at-sidebar-user-image,
+    .at-sidebar-user-info {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .at-sidebar-user-info {
+      color: #b4b4b4;
+      font-size: 12px;
+      margin-left: 10px;
+    }
+
+    img {
+      border: 2px solid #CCC;
+      border-radius: 20px;
+      width: 40px;
+    }
+  }
+}

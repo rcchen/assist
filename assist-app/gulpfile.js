@@ -33,6 +33,6 @@ gulp.task('default', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch('./src/**/*.ts*', ['build']);
+  gulp.watch(['./src/**/*.ts*', './src/**/*.less'], ['build']);
   gulp.watch('./index.html', ['copy']);
 });
