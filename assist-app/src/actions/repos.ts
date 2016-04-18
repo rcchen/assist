@@ -6,7 +6,7 @@ export function requestRepos() {
 }
 
 export const RECEIVE_REPOS = "RECEIVE_REPOS";
-export function receiveRepos(repos) {
+export function receiveRepos(repos: Github.Repo[]) {
   return {
     type: RECEIVE_REPOS,
     repos

@@ -24,7 +24,7 @@
         "actions/index.ts",
         "actions/repos.ts",
         "actions/user.ts",
-        "reducers.ts",
+        "reducers/index.ts",
         "views/index.ts",
         "init.tsx",
         "views/app/app.tsx"

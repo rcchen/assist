@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 
-import { REQUEST_USER, RECEIVE_USER } from "./actions";
+import { REQUEST_USER, RECEIVE_USER } from "../actions";
 
 function user(state: { user?: Github.User } = {}, action: any) {
   switch (action.type) {
