@@ -24,6 +24,7 @@
     "./core/config.ts",
     "./core/index.ts",
     "./core/session.ts",
+    "./core/spa.ts",
     "./index.ts",
     "../../typings/main.d.ts"
   ]
